@@ -1,0 +1,43 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block cabecera %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Conoce a nuestros Clientes</h1>
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Conocelos aquí</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock cabecera %}
+
+{% block contenido %}
+<section id="scroll">
+    <h1>Clientes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Direccion</th>
+                </tr>
+            </thead>
+            {% for Clientes in clientes %}
+            <tbody>
+                <tr>
+                    <td>{{ Clientes.nombre }}</td>
+                    <td>{{ Clientes.apellido }}</td>
+                    <td>{{ Clientes.email }}</td>
+                    <td>{{ Clientes.direccion }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+</section>
+{% endblock contenido %}

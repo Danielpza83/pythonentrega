@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block  title %}
+    <title>Resultados Peliculas</title>
+{% endblock title %}
+
+
+{% block cabecera %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Resultados de Peliculas</h1>
+            <h2 class="masthead-subheading mb-0">¡Las mejores películas!</h2>
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Miralos aquí</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock cabecera %}
+
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Director</th>
+                <th>Productora</th>
+                <th>Protagonista</th>
+                <th>Género</th>
+                <th>Fecha de Estreno</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        {% for Peliculas in genero %}
+        <tbody>
+            <tr>
+                <td>{{ Peliculas.titulo }}</td>
+                <td>{{ Peliculas.director }}</td>
+                <td>{{ Peliculas.productora }}</td>
+                <td>{{ Peliculas.actor_protagonista }}</td>
+                <td>{{ Peliculas.genero }}</td>
+                <td>{{ Peliculas.fecha_estreno }}</td>
+                <td>{{ Peliculas.cantidad }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>  
+{% endblock contenido %}    

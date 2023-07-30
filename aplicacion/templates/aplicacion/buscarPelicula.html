@@ -1,0 +1,28 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block cabecera %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Listado de Peliculas</h1>
+            <h2 class="masthead-subheading mb-0">¡Las mejores películas!</h2>
+            <form action="/aplicacion/buscar" method="get">
+                {% csrf_token %}
+                <input type="text" name="titulo" id="titulo">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock cabecera %}
+
+{% block contenido %}
+{% endblock contenido %}
+
+
